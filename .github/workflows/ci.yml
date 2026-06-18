@@ -1,0 +1,22 @@
+name: Reproduce analysis
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e ".[dev]"
+      - run: ruff check src tests
+      - run: pytest -q
+      - run: python -m src.build_portfolio
+      - name: Confirm that generated outputs are committed
+        run: git diff --exit-code
+
