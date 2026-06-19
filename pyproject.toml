@@ -1,7 +1,7 @@
 [project]
-name = "vivienda-coroico-portfolio"
+name = "rural-bolivia-housing-analytics"
 version = "1.0.0"
-description = "Reproducible, privacy-first household survey portfolio project"
+description = "Reproducible, privacy-first household survey analysis"
 requires-python = ">=3.11"
 dependencies = [
   "matplotlib==3.10.3",

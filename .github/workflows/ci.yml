@@ -16,7 +16,7 @@ jobs:
       - run: pip install -e ".[dev]"
       - run: ruff check src tests
       - run: pytest -q
-      - run: python -m src.build_portfolio
+      - run: python -m src.build_project
       - name: Validate generated artefacts
         run: |
           test "$(find docs/figures -name '*.png' -size +0c | wc -l)" -eq 10
