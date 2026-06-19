@@ -17,6 +17,16 @@ jobs:
       - run: ruff check src tests
       - run: pytest -q
       - run: python -m src.build_portfolio
-      - name: Confirm that generated outputs are committed
-        run: git diff --exit-code
-
+      - name: Validate generated artefacts
+        run: |
+          test "$(find docs/figures -name '*.png' -size +0c | wc -l)" -eq 10
+          test "$(find docs/figures -name '*.svg' -size +0c | wc -l)" -eq 10
+          git diff --exit-code -- \
+            data/synthetic \
+            data/data_dictionary.csv \
+            reports/key_metrics.json \
+            reports/model_results.csv \
+            reports/executive-summary.md \
+            reports/research-paper.md \
+            docs/index.html \
+            docs/research-paper.html

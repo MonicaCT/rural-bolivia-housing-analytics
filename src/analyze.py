@@ -256,6 +256,9 @@ def export_results(households: pd.DataFrame, members: pd.DataFrame, model, predi
         "ci_high": np.exp(conf.loc[predictors, 1]),
         "p_value": model.pvalues[predictors],
     })
+    results[["odds_ratio", "ci_low", "ci_high", "p_value"]] = results[
+        ["odds_ratio", "ci_low", "ci_high", "p_value"]
+    ].round(10)
     results.to_csv(REPORTS / "model_results.csv", index=False)
     return metrics
 
