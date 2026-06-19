@@ -4,9 +4,13 @@
 [![Data](https://img.shields.io/badge/public_data-100%25_synthetic-C9A227)](data/README.md)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-2F6B9A)](pyproject.toml)
 [![Ethics](https://img.shields.io/badge/privacy-first-002147)](PRIVACY.md)
+[![CI](https://github.com/MonicaCT/rural-bolivia-housing-analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/MonicaCT/rural-bolivia-housing-analytics/actions/workflows/ci.yml)
+[![Live portfolio](https://img.shields.io/badge/live-portfolio-C9A227)](https://monicact.github.io/rural-bolivia-housing-analytics/)
 
 > A privacy-first, reproducible household-survey portfolio demonstrating statistical judgement,
 > uncertainty quantification, modelling, data validation and executive communication.
+
+**[Explore the live analytical portfolio](https://monicact.github.io/rural-bolivia-housing-analytics/)**
 
 ![Housing adequacy with uncertainty](docs/figures/04_housing_by_zone.png)
 
