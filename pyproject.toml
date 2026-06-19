@@ -1,0 +1,25 @@
+[project]
+name = "rural-bolivia-housing-analytics"
+version = "1.0.0"
+description = "Reproducible, privacy-first household survey analysis"
+requires-python = ">=3.11"
+dependencies = [
+  "matplotlib==3.10.3",
+  "numpy==2.2.6",
+  "pandas==2.2.3",
+  "scipy==1.15.3",
+  "seaborn==0.13.2",
+  "statsmodels==0.14.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.5", "ruff==0.11.12"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+

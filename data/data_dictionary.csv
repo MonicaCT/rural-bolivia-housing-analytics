@@ -1,0 +1,34 @@
+table,variable,dtype,description,missing_n
+households,household_id,object,Random synthetic household identifier,0
+households,zone,object,Synthetic aggregate area; not a real location,0
+households,head_gender,object,Head gender,0
+households,head_age,int64,Head age,0
+households,household_size,int64,Household size,0
+households,rooms,int64,Rooms,0
+households,persons_per_room,float64,Persons per room,0
+households,electricity,int64,Electricity,0
+households,water_improved,int64,Water improved,0
+households,sanitation_improved,int64,Sanitation improved,0
+households,wall_quality,int64,Wall quality,0
+households,floor_quality,int64,Floor quality,0
+households,head_education_years,float64,Head education years,3
+households,monthly_income_bob,float64,Monthly income bob,9
+households,food_expense_bob,float64,Food expense bob,0
+households,health_expense_bob,float64,Health expense bob,2
+households,education_expense_bob,float64,Education expense bob,0
+households,agriculture_income_share,float64,Agriculture income share,0
+households,crop_diversity,int64,Crop diversity,0
+households,livestock_count,int64,Livestock count,0
+households,housing_score,float64,Share of six adequate housing components,0
+households,adequate_housing,int64,"Composite binary outcome based on services, materials and crowding",0
+households,vulnerability_index,float64,"Analytically defined index from housing, education and income (0-100)",0
+households,survey_weight,float64,Synthetic survey weight used for methodological evaluation,0
+members,member_id,object,Random synthetic person identifier,0
+members,household_id,object,Random synthetic household identifier,0
+members,relationship,object,Relationship,0
+members,gender,object,Gender,0
+members,age,int64,Age,0
+members,literate,float64,Literate,7
+members,employed,int64,Employed,0
+members,personal_income_bob,int64,Personal income bob,0
+members,household_income_reference_bob,float64,Household income reference bob,0

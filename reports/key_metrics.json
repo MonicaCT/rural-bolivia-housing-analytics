@@ -1,0 +1,13 @@
+{
+  "households": 60,
+  "members": 271,
+  "adequate_housing_weighted_pct": 37.9,
+  "adequate_housing_ci_pct": [
+    26.7,
+    51.7
+  ],
+  "median_income_bob": 2210.0,
+  "income_missing_pct": 15.0,
+  "mean_vulnerability": 44.6,
+  "privacy_status": "Synthetic public data only"
+}
