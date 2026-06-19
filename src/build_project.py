@@ -129,7 +129,7 @@ figure{{margin:2rem 0}} figure img{{width:100%;height:auto}} figcaption{{font-si
 <div class="eyebrow">Research article · Cross-sectional methods demonstration · STROBE-aligned</div>
 <h1>Socioeconomic and Housing Conditions in Rural Bolivia: A Privacy-First Reproducible Survey Analysis</h1>
 <div class="authors">Monica Cueto Tapia</div>
-<div class="meta">Independent data analysis portfolio · Version 1.0 · 18 June 2026</div>
+<div class="meta">Reproducible household survey analysis · Version 1.0 · 18 June 2026</div>
 <aside class="notice"><strong>Research integrity statement.</strong> Every public observation is synthetic. This article demonstrates a defensible research workflow and must not be cited as empirical evidence about Coroico or Bolivia.</aside>
 
 <section class="abstract" id="abstract"><h2>Abstract</h2>
@@ -141,7 +141,7 @@ figure{{margin:2rem 0}} figure img{{width:100%;height:auto}} figcaption{{font-si
 <section id="introduction"><h2>1. Introduction</h2>
 <p>Housing is multidimensional: construction materials, basic services, crowding and household resources jointly shape wellbeing. Survey analysis often compresses these dimensions into percentages without reporting denominators, uncertainty, missingness or the assumptions behind composite measures. These omissions weaken both scientific interpretation and operational decision-making.</p>
 <p>A second challenge is disclosure. Household microdata may combine names, ages, occupations, income, health information and property characteristics. Removing a name column is insufficient when rare combinations can re-identify respondents. This project therefore treats privacy architecture as part of statistical quality rather than as an administrative appendix.</p>
-<h3>1.1 Research questions</h3><ol><li>How can adequate housing be defined transparently from multiple components?</li><li>Which socioeconomic characteristics are associated with adequate housing in a small cross-sectional demonstration?</li><li>How should missingness and sampling uncertainty be communicated?</li><li>Can a public portfolio remain reproducible without exposing confidential source records?</li></ol></section>
+<h3>1.1 Research questions</h3><ol><li>How can adequate housing be defined transparently from multiple components?</li><li>Which socioeconomic characteristics are associated with adequate housing in a small cross-sectional demonstration?</li><li>How should missingness and sampling uncertainty be communicated?</li><li>How can survey analysis remain reproducible without exposing confidential source records?</li></ol></section>
 
 <section id="methods"><h2>2. Methods</h2>
 <h3>2.1 Study design and reporting framework</h3><p>The paper follows the Introduction-Methods-Results-Discussion structure and is mapped to the STROBE checklist for cross-sectional studies [1,2]. It is a methodological demonstration, not a registered observational study.</p>
@@ -169,7 +169,7 @@ figure{{margin:2rem 0}} figure img{{width:100%;height:auto}} figcaption{{font-si
 <div class="callout"><strong>Interpretation:</strong> every confidence interval includes 1. The defensible conclusion is insufficient precision to distinguish these adjusted associations from the null, not evidence that the predictors have no relationship with housing.</div>
 <figure><img src="figures/09_model_coefficients.svg" alt="Regression odds ratios"><figcaption><strong>Figure 4.</strong> Adjusted odds ratios on a logarithmic scale. The dashed vertical line marks the null value.</figcaption></figure></section>
 
-<section id="discussion"><h2>4. Discussion</h2><p>This demonstration shows that a portfolio can display advanced analytical competence without overstating evidence. The main contribution is the integration of disclosure controls, explicit denominators, uncertainty, documented measurement and automated reproduction. The wide intervals are analytically useful: they reveal why complex machine learning and detailed subgroup ranking would be inappropriate for a 60-household study.</p><p>For a real survey, scientific value would depend on information that cannot be reconstructed from the data alone: target population, sampling frame, selection probabilities, field dates, non-response process, questionnaire, interviewer procedures and ethics approval. These elements should be documented before substantive re-analysis.</p></section>
+<section id="discussion"><h2>4. Discussion</h2><p>This analysis integrates disclosure controls, explicit denominators, uncertainty, documented measurement and automated reproduction. The wide intervals are analytically important: they show why complex machine learning and detailed subgroup ranking would be inappropriate for a 60-household study.</p><p>For a real survey, scientific interpretation would depend on information that cannot be reconstructed from the data alone: target population, sampling frame, selection probabilities, field dates, non-response process, questionnaire, interviewer procedures and ethics approval. These elements should be documented before substantive re-analysis.</p></section>
 <section id="limitations"><h2>5. Limitations</h2><ul><li>Synthetic observations cannot validate or reproduce the original empirical findings.</li><li>The demonstration weights do not represent a real sampling design.</li><li>The housing threshold and vulnerability coefficients require substantive validation.</li><li>Median filling understates missing-data uncertainty and is used only to keep the example transparent.</li><li>Binary gender measurement is an artificial simplification.</li><li>Cross-sectional associations cannot identify causal effects.</li></ul></section>
 <section id="conclusion"><h2>6. Conclusion</h2><p>Strong research communication is not the accumulation of charts or equations. It is the alignment of a meaningful question, appropriate estimand, transparent method, uncertainty, ethical data handling and restrained conclusion. This workflow provides a publishable foundation once authorised, anonymised source data and a complete survey design are available.</p></section>
 <section class="statements" id="statements"><h2>Declarations</h2><p><strong>Ethics and privacy:</strong> No real participant record is processed by the public pipeline. <strong>Data availability:</strong> Synthetic CSV files and their generator are included. <strong>Code availability:</strong> The complete pipeline, tests and dependency lockfile accompany this paper. <strong>Funding:</strong> No external funding is declared for this demonstration. <strong>Competing interests:</strong> None declared. <strong>Author contribution:</strong> Monica Cueto Tapia: conceptualisation, methodology, analysis design, interpretation and presentation.</p></section>
@@ -238,7 +238,7 @@ def write_dashboard(metrics: dict) -> None:
     )
     page = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rural Bolivia Household Survey Portfolio</title>
+<title>Rural Bolivia Household Survey Analysis</title>
 <style>
 :root{{--navy:#002147;--blue:#2f6b9a;--gold:#c9a227;--ink:#1d2733;--paper:#f5f7f9}}
 *{{box-sizing:border-box}} body{{margin:0;font:16px/1.6 system-ui,sans-serif;color:var(--ink);background:var(--paper)}}
@@ -253,7 +253,7 @@ main{{max-width:1200px;margin:auto;padding:2rem}} .cards{{display:grid;grid-temp
 figure{{margin:0;background:white;padding:1rem;border-radius:12px;box-shadow:0 4px 18px #00214710}} img{{width:100%;height:auto}} figcaption{{font-weight:700;color:var(--navy)}}
 footer{{padding:2rem;text-align:center;color:#62717f}} @media(max-width:600px){{.gallery{{grid-template-columns:1fr}} header{{padding-top:3rem}}}}
 </style></head><body>
-<header><span class="badge">Privacy-first reproducible portfolio</span><h1>Socioeconomic and Housing Conditions</h1>
+<header><span class="badge">Privacy-first reproducible analysis</span><h1>Socioeconomic and Housing Conditions</h1>
 <p>A transparent demonstration of survey analysis, uncertainty, statistical modelling and responsible data communication.</p>
 <a class="paper-link" href="research-paper.html">Read the STROBE-aligned research paper →</a></header>
 <main><section class="cards">{card_html}</section>

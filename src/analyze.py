@@ -30,7 +30,7 @@ def configure_style() -> None:
         "axes.labelsize": 11,
         "font.family": "DejaVu Sans",
         "grid.alpha": 0.20,
-        "svg.hashsalt": "vivienda-coroico-portfolio-v1",
+        "svg.hashsalt": "rural-bolivia-housing-analytics-v1",
     })
 
 

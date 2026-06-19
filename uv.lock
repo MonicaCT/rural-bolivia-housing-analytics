@@ -590,6 +590,38 @@ wheels = [
 ]
 
 [[package]]
+name = "rural-bolivia-housing-analytics"
+version = "1.0.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "matplotlib" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "scipy" },
+    { name = "seaborn" },
+    { name = "statsmodels" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "ruff" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "matplotlib", specifier = "==3.10.3" },
+    { name = "numpy", specifier = "==2.2.6" },
+    { name = "pandas", specifier = "==2.2.3" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = "==8.3.5" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = "==0.11.12" },
+    { name = "scipy", specifier = "==1.15.3" },
+    { name = "seaborn", specifier = "==0.13.2" },
+    { name = "statsmodels", specifier = "==0.14.4" },
+]
+provides-extras = ["dev"]
+
+[[package]]
 name = "scipy"
 version = "1.15.3"
 source = { registry = "https://pypi.org/simple" }
@@ -700,35 +732,3 @@ sdist = { url = "https://files.pythonhosted.org/packages/ba/19/1b9b0e29f30c6d35c
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ce/e4/dccd7f47c4b64213ac01ef921a1337ee6e30e8c6466046018326977efd95/tzdata-2026.2-py2.py3-none-any.whl", hash = "sha256:bbe9af844f658da81a5f95019480da3a89415801f6cc966806612cc7169bffe7", size = 349321, upload-time = "2026-04-24T15:22:05.876Z" },
 ]
-
-[[package]]
-name = "vivienda-coroico-portfolio"
-version = "1.0.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "matplotlib" },
-    { name = "numpy" },
-    { name = "pandas" },
-    { name = "scipy" },
-    { name = "seaborn" },
-    { name = "statsmodels" },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "pytest" },
-    { name = "ruff" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "matplotlib", specifier = "==3.10.3" },
-    { name = "numpy", specifier = "==2.2.6" },
-    { name = "pandas", specifier = "==2.2.3" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = "==8.3.5" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = "==0.11.12" },
-    { name = "scipy", specifier = "==1.15.3" },
-    { name = "seaborn", specifier = "==0.13.2" },
-    { name = "statsmodels", specifier = "==0.14.4" },
-]
-provides-extras = ["dev"]

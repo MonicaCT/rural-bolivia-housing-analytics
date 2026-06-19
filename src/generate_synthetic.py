@@ -1,7 +1,7 @@
 """Generate a fully synthetic dataset with the structure of a household survey.
 
 The generated records do not correspond to real people or households. The seed is
-fixed so every chart and model in the portfolio can be reproduced.
+fixed so every chart and model in the project can be reproduced.
 """
 
 from pathlib import Path

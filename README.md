@@ -5,27 +5,20 @@
 [![Python](https://img.shields.io/badge/Python-3.11%2B-2F6B9A)](pyproject.toml)
 [![Ethics](https://img.shields.io/badge/privacy-first-002147)](PRIVACY.md)
 [![CI](https://github.com/MonicaCT/rural-bolivia-housing-analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/MonicaCT/rural-bolivia-housing-analytics/actions/workflows/ci.yml)
-[![Live portfolio](https://img.shields.io/badge/live-portfolio-C9A227)](https://monicact.github.io/rural-bolivia-housing-analytics/)
+[![Live report](https://img.shields.io/badge/live-report-C9A227)](https://monicact.github.io/rural-bolivia-housing-analytics/)
 
-> A privacy-first, reproducible household-survey portfolio demonstrating statistical judgement,
-> uncertainty quantification, modelling, data validation and executive communication.
+> A privacy-first, reproducible household-survey analysis combining uncertainty quantification,
+> statistical modelling, data validation and responsible research communication.
 
-**[Explore the live analytical portfolio](https://monicact.github.io/rural-bolivia-housing-analytics/)**
+**[Explore the live analytical report](https://monicact.github.io/rural-bolivia-housing-analytics/)**
 
 ![Housing adequacy with uncertainty](docs/figures/04_housing_by_zone.png)
 
 ## Why this project exists
 
 The original academic archive mixed identifiable survey microdata with a static Word report. This
-portfolio redesign separates private research records from public communication. It uses **fully
+project separates private research records from public communication. It uses **fully
 synthetic data** to demonstrate the analytical workflow without exposing a single real respondent.
-
-The project is designed for two audiences:
-
-- **Research admissions:** transparent assumptions, mathematical definitions, uncertainty, ethics,
-  limitations and reproducibility.
-- **Senior data roles:** quality controls, SQL, automated pipelines, modelling, visual storytelling
-  and decision-focused reporting.
 
 ## Research questions
 
@@ -60,7 +53,7 @@ This is an **associational** model. The repository makes no causal claim.
 |---|---|---|
 | ![Missingness](docs/figures/02_missingness.png) | ![Income](docs/figures/03_income_distribution.png) | ![Coefficients](docs/figures/09_model_coefficients.png) |
 
-- [Interactive-style static portfolio](docs/index.html)
+- [Interactive analytical report](docs/index.html)
 - [STROBE-aligned research paper](docs/research-paper.html)
 - [Technical report source](reports/technical-report.qmd)
 - [Executive summary](reports/executive-summary.md)
@@ -87,7 +80,7 @@ tests/         Privacy, integrity and reproducibility tests
 python -m venv .venv
 source .venv/bin/activate       # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
-python -m src.build_portfolio
+python -m src.build_project
 pytest
 ```
 
