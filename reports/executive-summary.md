@@ -1,6 +1,6 @@
 # Executive summary
 
-> **Demonstration only:** every observation in this public repository is synthetic.
+> **Data status:** every observation in this public repository is synthetic.
 
 This reproducible case study contains **60 synthetic households** and
 **271 synthetic household members**. The weighted adequate-housing estimate is
@@ -18,5 +18,5 @@ monthly household income is **BOB 2210**.
 ## Limitations
 
 The dataset is synthetic and cannot support claims about Coroico or Bolivia. The sample is deliberately
-small, the survey weights are illustrative, and the housing index is a documented demonstration rather
+small, the survey weights are synthetic, and the housing index is an analytically defined measure rather
 than a validated policy instrument.

@@ -18,7 +18,7 @@
 
 The original academic archive mixed identifiable survey microdata with a static Word report. This
 project separates private research records from public communication. It uses **fully
-synthetic data** to demonstrate the analytical workflow without exposing a single real respondent.
+synthetic data** to implement and evaluate the analytical workflow without exposing real respondents.
 
 ## Research questions
 
@@ -92,7 +92,7 @@ access-controlled storage.
 
 - Public records are synthetic and cannot estimate conditions in Coroico or Bolivia.
 - Sixty households are insufficient for complex machine learning or strong subgroup claims.
-- Demonstration weights and indices are not substitutes for a documented sampling design or a
+- Synthetic weights and analytically defined indices are not substitutes for a documented sampling design or a
   validated measurement instrument.
 - Multiple imputation and survey-design variance should be added when authorised source data and
   design variables are available.
@@ -104,6 +104,6 @@ identifiable files. Code is MIT licensed; synthetic data are released under CC0.
 
 ## Resumen en español
 
-Este repositorio demuestra un análisis reproducible de encuestas usando datos completamente
-sintéticos. Prioriza privacidad, calidad, incertidumbre y comunicación ejecutiva. Ningún resultado
+Este repositorio presenta un análisis reproducible de encuestas usando datos completamente
+sintéticos. Prioriza privacidad, calidad, incertidumbre y comunicación científica. Ningún resultado
 debe interpretarse como una estimación real para Coroico o Bolivia.

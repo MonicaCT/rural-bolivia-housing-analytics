@@ -21,8 +21,8 @@ households,crop_diversity,int64,Crop diversity,0
 households,livestock_count,int64,Livestock count,0
 households,housing_score,float64,Share of six adequate housing components,0
 households,adequate_housing,int64,"Composite binary outcome based on services, materials and crowding",0
-households,vulnerability_index,float64,"Demonstration index from housing, education and income (0-100)",0
-households,survey_weight,float64,Synthetic demonstration survey weight,0
+households,vulnerability_index,float64,"Analytically defined index from housing, education and income (0-100)",0
+households,survey_weight,float64,Synthetic survey weight used for methodological evaluation,0
 members,member_id,object,Random synthetic person identifier,0
 members,household_id,object,Random synthetic household identifier,0
 members,relationship,object,Relationship,0

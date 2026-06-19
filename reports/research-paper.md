@@ -3,7 +3,7 @@
 ## A Privacy-First Reproducible Survey Analysis
 
 **Author:** Monica Cueto Tapia  
-**Reporting framework:** IMRaD; STROBE-aligned cross-sectional methods demonstration  
+**Reporting framework:** IMRaD; STROBE-aligned cross-sectional methodological study
 **Data status:** 100% synthetic public records
 
 ## Structured abstract

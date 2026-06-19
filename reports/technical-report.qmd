@@ -1,5 +1,5 @@
 ---
-title: "Socioeconomic and Housing Conditions: A Reproducible Demonstration"
+title: "Socioeconomic and Housing Conditions: A Reproducible Methodological Study"
 author: "Monica Cueto Tapia"
 format:
   html:
@@ -14,14 +14,14 @@ bibliography: references.bib
 
 ## Abstract
 
-This report demonstrates a privacy-first workflow for a small household survey. It combines data
+This report specifies and evaluates a privacy-preserving workflow for a small household survey. It combines data
 contracts, weighted descriptive statistics, uncertainty quantification, missing-data diagnostics,
 composite measurement and exploratory regression. The synthetic results are methodological examples,
 not estimates for Coroico or Bolivia.
 
 ## Research design
 
-The public demonstration contains 60 households and 271 household members. The unit of analysis is
+The synthetic cross-sectional dataset contains 60 households and 271 household members. The unit of analysis is
 declared separately for every estimand to avoid mixing household and person denominators. A real study
 must additionally document sampling frame, field dates, selection probabilities, non-response and
 post-stratification.
@@ -48,10 +48,10 @@ sanitation, quality walls, quality floor and no severe crowding. Adequate housin
 of at least two thirds. This transparent rule is preferable to an undocumented index, but it still
 requires substantive validation before policy use.
 
-The demonstration vulnerability index is
+The analytically defined vulnerability index is
 
 $$
-V_i=100\left[1-left(0.42H_i+0.28\frac{E_i}{16}
+V_i=100\left[1-\left(0.42H_i+0.28\frac{E_i}{16}
 +0.30\min\left(\frac{Y_i}{6000},1\right)\right)\right]+\epsilon_i.
 $$
 
@@ -78,7 +78,7 @@ multiple imputations rather than silently applying complete-case analysis.
 ![Gender outcomes](../docs/figures/06_gender_outcomes.png)
 
 Differences are descriptive. Responsible interpretation requires confidence intervals, sample-size
-disclosure and attention to gender measurement beyond a binary demonstration variable.
+disclosure and attention to gender measurement beyond the binary variable used in this study.
 
 ## Exploratory model
 

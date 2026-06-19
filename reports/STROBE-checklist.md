@@ -9,7 +9,7 @@ is fully STROBE compliant.
 | 1. Study design in title/abstract | Title, structured abstract | Complete |
 | 2. Background and rationale | Introduction | Complete |
 | 3. Objectives | Research questions | Complete |
-| 4. Study design | Methods 2.1 | Complete for demonstration |
+| 4. Study design | Methods 2.1 | Complete for simulation-based methodological study |
 | 5. Setting | Methods 2.2 | Synthetic setting only |
 | 6. Participants | Methods 2.2 | Synthetic generation described |
 | 7. Variables | Methods 2.5 and data dictionary | Complete |

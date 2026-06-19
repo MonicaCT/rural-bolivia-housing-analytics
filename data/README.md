@@ -12,7 +12,7 @@ perturbed or sampled from the original survey.
 
 ## Provenance
 
-1. A fixed pseudorandom seed generates plausible demonstration variables.
+1. A fixed pseudorandom seed generates plausible synthetic analytical variables.
 2. Missing values are deliberately introduced to exercise quality checks.
 3. `src/validate.py` blocks direct identifiers, invalid keys and impossible ranges.
 4. All outputs are rebuilt from these public files.
