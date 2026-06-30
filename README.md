@@ -12,6 +12,17 @@
 
 **[Explore the live analytical report](https://monicact.github.io/rural-bolivia-housing-analytics/)**
 
+## Portfolio classification
+
+| Dimension | Classification |
+|---|---|
+| Primary lab | Open Science Lab |
+| Secondary labs | Applied Economics Lab; Research Methods Lab; Data Science Lab |
+| Domain | Housing; poverty; rural development; survey analysis |
+| Methods | Statistical modelling; bootstrap uncertainty; logistic regression; data validation |
+| Tools | Python; SQL; Quarto; GitHub Actions; synthetic data |
+| Portfolio role | Demonstrates privacy-first reproducible research and responsible public communication. |
+
 ![Housing adequacy with uncertainty](docs/figures/04_housing_by_zone.png)
 
 ## Why this project exists
