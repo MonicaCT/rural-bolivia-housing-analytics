@@ -1,11 +1,24 @@
 cff-version: 1.2.0
 message: "If you use the workflow, please cite this repository. Do not cite synthetic results as evidence."
-title: "Socioeconomic and Housing Conditions: A Reproducible Survey Analysis"
+title: "Socioeconomic and Housing Conditions in Rural Bolivia"
+type: software
 version: 1.0.0
 date-released: 2026-06-18
 authors:
   - family-names: "Cueto Tapia"
     given-names: "Monica"
 repository-code: "https://github.com/MonicaCT/rural-bolivia-housing-analytics"
+url: "https://github.com/MonicaCT/rural-bolivia-housing-analytics"
 license: MIT
-
+abstract: "Privacy-first, reproducible household-survey analytics for rural Bolivia using fully synthetic public data, statistical modelling, uncertainty reporting and responsible research communication."
+keywords:
+  - rural Bolivia
+  - housing
+  - household survey
+  - synthetic data
+  - privacy
+  - open science
+  - reproducible research
+  - Python
+  - SQL
+  - Quarto
