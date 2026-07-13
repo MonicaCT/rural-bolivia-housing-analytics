@@ -1,25 +1,357 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rural Bolivia Household Survey Analysis</title>
-<style>
-:root{--navy:#002147;--blue:#2f6b9a;--gold:#c9a227;--ink:#1d2733;--paper:#f5f7f9}
-*{box-sizing:border-box} body{margin:0;font:16px/1.6 system-ui,sans-serif;color:var(--ink);background:var(--paper)}
-header{background:linear-gradient(135deg,var(--navy),var(--blue));color:white;padding:5rem max(6vw,2rem) 4rem}
-header p{max-width:760px;font-size:1.15rem} .badge{display:inline-block;background:var(--gold);color:#17202a;padding:.35rem .7rem;border-radius:999px;font-weight:700}
-.paper-link{display:inline-block;margin-top:.8rem;padding:.75rem 1rem;border:2px solid white;border-radius:8px;color:white;text-decoration:none;font-weight:700}
-main{max-width:1200px;margin:auto;padding:2rem} .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:-4rem}
-.card{background:white;padding:1.2rem;border-radius:12px;box-shadow:0 8px 24px #00214718;border-top:4px solid var(--gold)}
-.card span{display:block;color:#62717f} .card strong{font-size:1.7rem;color:var(--navy)}
-.notice{margin:2rem 0;padding:1rem 1.2rem;background:#fff8df;border-left:5px solid var(--gold)}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:1.25rem}
-figure{margin:0;background:white;padding:1rem;border-radius:12px;box-shadow:0 4px 18px #00214710} img{width:100%;height:auto} figcaption{font-weight:700;color:var(--navy)}
-footer{padding:2rem;text-align:center;color:#62717f} @media(max-width:600px){.gallery{grid-template-columns:1fr} header{padding-top:3rem}}
-</style></head><body>
-<header><span class="badge">Privacy-first reproducible analysis</span><h1>Socioeconomic and Housing Conditions</h1>
-<p>A reproducible methodological study of survey estimands, uncertainty, statistical modelling and responsible data communication.</p>
-<a class="paper-link" href="research-paper.html">Read the STROBE-aligned research paper →</a></header>
-<main><section class="cards"><article class="card"><span>Synthetic households</span><strong>60</strong></article><article class="card"><span>Synthetic members</span><strong>271</strong></article><article class="card"><span>Adequate housing</span><strong>37.9%</strong></article><article class="card"><span>Median income</span><strong>BOB 2210</strong></article></section>
-<aside class="notice"><strong>Important:</strong> all public observations are synthetic. Results evaluate the analytical protocol and must not be interpreted as estimates for Coroico or Bolivia.</aside>
-<h2>Analytical narrative</h2><section class="gallery"><figure><img src="figures/01_population_pyramid.svg" alt="Population structure"><figcaption>Population structure</figcaption></figure><figure><img src="figures/02_missingness.svg" alt="Missing data audit"><figcaption>Missing data audit</figcaption></figure><figure><img src="figures/03_income_distribution.svg" alt="Income distribution"><figcaption>Income distribution</figcaption></figure><figure><img src="figures/04_housing_by_zone.svg" alt="Housing and uncertainty"><figcaption>Housing and uncertainty</figcaption></figure><figure><img src="figures/05_service_access.svg" alt="Service access"><figcaption>Service access</figcaption></figure><figure><img src="figures/06_gender_outcomes.svg" alt="Gender outcomes"><figcaption>Gender outcomes</figcaption></figure><figure><img src="figures/07_vulnerability_income.svg" alt="Multidimensional vulnerability"><figcaption>Multidimensional vulnerability</figcaption></figure><figure><img src="figures/08_correlation_heatmap.svg" alt="Associations"><figcaption>Associations</figcaption></figure><figure><img src="figures/09_model_coefficients.svg" alt="Exploratory model"><figcaption>Exploratory model</figcaption></figure><figure><img src="figures/10_agriculture_diversity.svg" alt="Agricultural diversity"><figcaption>Agricultural diversity</figcaption></figure></section>
-<h2>Methodological position</h2><p>Estimates include uncertainty, missing data are disclosed, and the regression is explicitly exploratory. Association is not causation.</p></main>
-<footer>Built from code with a fixed random seed and automated validation.</footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rural Bolivia Housing Analytics</title>
+  <meta name="description" content="Privacy-first household survey analytics for rural housing conditions, service access and territorial inequalities in Bolivia.">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" aria-label="Site header">
+    <div class="nav-wrap">
+      <a class="brand" href="https://github.com/MonicaCT" aria-label="Monica Cueto Tapia GitHub profile">
+        <strong>Monica Cueto Tapia</strong>
+        <span>Development Data Portfolio</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+        <a href="#summary">Summary</a>
+        <a href="#metrics">Metrics</a>
+        <a href="#findings">Findings</a>
+        <a href="#dashboard">Report</a>
+        <a href="#figures">Figures</a>
+        <a href="#methodology">Methods</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#reproducibility">Reproduce</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" style="background: linear-gradient(90deg, rgba(247,245,240,0.97), rgba(247,245,240,0.82)), url('figures/04_housing_by_zone.svg') center right / contain no-repeat;">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Privacy-first household survey analytics</p>
+          <h1>Rural Bolivia Housing Analytics</h1>
+          <p class="subtitle">Privacy-first household survey analytics for understanding rural housing conditions, service access and territorial inequalities in Bolivia.</p>
+          <p class="lead">A reproducible public workflow using synthetic household and person records to demonstrate Python data processing, SQL modelling, validation, housing indicators, uncertainty reporting and policy-oriented communication without exposing respondent records.</p>
+          <div class="actions" aria-label="Project actions">
+            <a class="button primary" href="https://monicact.github.io/rural-bolivia-housing-analytics/">Website</a>
+            <a class="button secondary" href="research-paper.html">Report</a>
+            <a class="button secondary" href="#figures">Main Figures</a>
+            <a class="button secondary" href="#tables">Executive Tables</a>
+            <a class="button tertiary" href="#methodology">Methodology</a>
+            <a class="button tertiary" href="https://github.com/MonicaCT/rural-bolivia-housing-analytics">Repository</a>
+            <a class="button tertiary" href="https://monicact.github.io/">Back to Portfolio</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Project signals">
+          <div class="signal"><strong>Public data are synthetic</strong><span>Original identifiable records are not distributed in the public repository.</span></div>
+          <div class="signal"><strong>Data analyst stack</strong><span>Python pipeline, SQL analytical model, tests, reports, figures and GitHub Pages publication.</span></div>
+          <div class="signal"><strong>Interpretation discipline</strong><span>Associational estimates, uncertainty intervals and missingness are reported before substantive claims.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="summary">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Executive summary</p>
+            <h2>What the project demonstrates</h2>
+          </div>
+          <p>This repository is a public, privacy-preserving version of a household-survey analysis workflow. It separates private research records from public communication by using fully synthetic data to demonstrate validation, uncertainty reporting, modelling and publication.</p>
+        </div>
+        <div class="grid three">
+          <article class="surface accent">
+            <h3>Household survey analytics</h3>
+            <p>Defines household and person units separately, reports denominators, builds housing and vulnerability indicators, and documents limits of interpretation.</p>
+          </article>
+          <article class="surface teal">
+            <h3>Privacy-first publication</h3>
+            <p>Uses synthetic public records, excludes original identifiable files, avoids publishing direct identifiers, and documents responsible use.</p>
+          </article>
+          <article class="surface blue">
+            <h3>Recruiter-facing evidence</h3>
+            <p>Shows Python, SQL, validation tests, analytical reporting, visual communication and reproducibility with a fixed-seed workflow.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="metrics">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Key metrics</p>
+            <h2>Verified public workflow figures</h2>
+          </div>
+          <p>All figures below are already documented in the repository outputs. They describe the synthetic public workflow and must not be interpreted as estimates for Coroico or Bolivia.</p>
+        </div>
+        <div class="metric-grid">
+          <div class="metric"><strong>60</strong><span>Synthetic households</span></div>
+          <div class="metric"><strong>271</strong><span>Synthetic household members</span></div>
+          <div class="metric"><strong>37.9%</strong><span>Weighted adequate-housing estimate</span></div>
+          <div class="metric"><strong>26.7%-51.7%</strong><span>Bootstrap 95% interval</span></div>
+          <div class="metric"><strong>BOB 2210</strong><span>Median monthly household income</span></div>
+          <div class="metric"><strong>15.0%</strong><span>Income missingness</span></div>
+          <div class="metric"><strong>44.6</strong><span>Mean vulnerability index</span></div>
+          <div class="metric"><strong>10</strong><span>Publication figures available</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="findings">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Key findings</p>
+            <h2>Documented insights from the existing outputs</h2>
+          </div>
+          <p>The findings are methodological and illustrative because the public records are synthetic. No causal claims are made.</p>
+        </div>
+        <div class="grid three">
+          <article class="surface accent"><h3>Housing adequacy is reported with uncertainty</h3><p>The synthetic workflow reports a weighted adequate-housing estimate of 37.9% with a 95% bootstrap interval of 26.7%-51.7%.</p></article>
+          <article class="surface blue"><h3>Service access is part of the housing score</h3><p>The housing score combines electricity, improved water, improved sanitation, wall quality, floor quality and severe-crowding status.</p></article>
+          <article class="surface teal"><h3>Missingness is visible before modelling</h3><p>Income missingness is reported as 15.0%, and the missing-data audit is published as a first-class analytical output.</p></article>
+          <article class="surface green"><h3>Territorial comparisons are cautious</h3><p>Zone-level housing outputs include intervals, making the uncertainty around small samples visible instead of encouraging unstable rankings.</p></article>
+          <article class="surface orange"><h3>Regression remains exploratory</h3><p>The logistic model is parsimonious for a 60-household sample, and the documented model intervals cross the null.</p></article>
+          <article class="surface accent"><h3>Privacy shapes the publication layer</h3><p>Public outputs are synthetic, aggregate or methodological, with original identifiable records excluded from the repository.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dashboard">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Dashboard or report</p>
+            <h2>Interactive analytical report</h2>
+          </div>
+          <p>The repository contains a public GitHub Pages report and a STROBE-aligned HTML paper. No separate dashboard was rebuilt in this phase.</p>
+        </div>
+        <div class="grid two">
+          <article class="project-card">
+            <div class="project-media"><img src="figures/04_housing_by_zone.svg" alt="Housing adequacy by synthetic zone with uncertainty intervals"></div>
+            <div class="project-body">
+              <h3>Public analytical report</h3>
+              <p>Web-based publication layer presenting the synthetic workflow, headline metrics, figures, methods, privacy statement and links to reproducible assets.</p>
+              <div class="tags"><span>GitHub Pages</span><span>Household survey</span><span>Privacy</span><span>Validation</span></div>
+              <div class="card-actions"><a class="button small primary" href="https://monicact.github.io/rural-bolivia-housing-analytics/">Open website</a><a class="button small secondary" href="research-paper.html">Read paper</a></div>
+            </div>
+          </article>
+          <article class="surface blue">
+            <h3>Main sections</h3>
+            <ul class="list-clean">
+              <li>Executive summary and verified metrics.</li>
+              <li>Housing adequacy, service access, missingness and vulnerability figures.</li>
+              <li>Executive tables from the HTML paper and existing CSV outputs.</li>
+              <li>Workflow, methodology, privacy, reproducibility and limitations.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="figures">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Main figures</p>
+            <h2>Existing visual evidence</h2>
+          </div>
+          <p>Eight non-redundant figures are reused from `docs/figures`. They summarize data quality, income, housing, service access, gender outcomes, vulnerability and the exploratory model.</p>
+        </div>
+        <div class="grid two">
+          <article class="project-card"><div class="project-media"><img src="figures/02_missingness.svg" alt="Missing data audit"></div><div class="project-body"><h3>Missing data audit</h3><p>Period: synthetic cross-sectional workflow. Unit: variable-level missingness. Source: synthetic public data. Method note: missingness is disclosed before outcome modelling.</p></div></article>
+          <article class="project-card"><div class="project-media"><img src="figures/03_income_distribution.svg" alt="Income distribution"></div><div class="project-body"><h3>Income distribution</h3><p>Period: synthetic cross-sectional workflow. Unit: households. Source: synthetic public data. Method note: income is summarized for descriptive context only.</p></div></article>
+          <article class="project-card"><div class="project-media"><img src="figures/04_housing_by_zone.svg" alt="Housing adequacy by zone"></div><div class="project-body"><h3>Housing adequacy by synthetic zone</h3><p>Period: synthetic cross-sectional workflow. Unit: households. Source: synthetic public data. Method note: intervals are shown to avoid over-ranking small groups.</p></div></article>
+          <article class="project-card"><div class="project-media"><img src="figures/05_service_access.svg" alt="Service access"></div><div class="project-body"><h3>Service access</h3><p>Period: synthetic cross-sectional workflow. Unit: households. Source: synthetic public data. Method note: service access enters the transparent housing measurement logic.</p></div></article>
+          <article class="project-card"><div class="project-media"><img src="figures/06_gender_outcomes.svg" alt="Gender outcomes"></div><div class="project-body"><h3>Gender-disaggregated outcomes</h3><p>Period: synthetic cross-sectional workflow. Unit: persons and households as documented. Source: synthetic public data. Method note: differences are descriptive.</p></div></article>
+          <article class="project-card"><div class="project-media"><img src="figures/07_vulnerability_income.svg" alt="Income and multidimensional vulnerability"></div><div class="project-body"><h3>Income and vulnerability</h3><p>Period: synthetic cross-sectional workflow. Unit: households. Source: synthetic public data. Method note: vulnerability is analytically defined and illustrative.</p></div></article>
+          <article class="project-card"><div class="project-media"><img src="figures/08_correlation_heatmap.svg" alt="Correlation heatmap"></div><div class="project-body"><h3>Correlation heatmap</h3><p>Period: synthetic cross-sectional workflow. Unit: variables. Source: synthetic public data. Method note: associations are exploratory and not causal.</p></div></article>
+          <article class="project-card"><div class="project-media"><img src="figures/09_model_coefficients.svg" alt="Model coefficients"></div><div class="project-body"><h3>Exploratory model coefficients</h3><p>Period: synthetic cross-sectional workflow. Unit: household model. Source: synthetic public data. Method note: odds ratios summarize association, not causal effects.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tables">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Executive tables</p>
+            <h2>Reusable tabular outputs</h2>
+          </div>
+          <p>Existing tables are linked without regeneration. Files outside `/docs` are linked through GitHub so they remain reachable when Pages is served from `/docs`.</p>
+        </div>
+        <div class="grid four">
+          <article class="surface accent"><h3>Table 1. Synthetic sample characteristics</h3><p>Households, members, income, missingness, adequate housing and vulnerability summary.</p><a class="button small secondary" href="research-paper.html#results">Open table</a></article>
+          <article class="surface blue"><h3>Table 2. Exploratory logistic model</h3><p>Odds ratios and intervals for education, log income, household size and woman-headed household.</p><a class="button small secondary" href="research-paper.html#results">Open table</a></article>
+          <article class="surface teal"><h3>Model results CSV</h3><p>Machine-readable model coefficients already stored in the reports directory.</p><a class="button small secondary" href="https://github.com/MonicaCT/rural-bolivia-housing-analytics/blob/main/reports/model_results.csv">Open CSV</a></article>
+          <article class="surface green"><h3>STROBE reporting map</h3><p>Checklist-style table mapping reporting items to the public methodological paper.</p><a class="button small secondary" href="https://github.com/MonicaCT/rural-bolivia-housing-analytics/blob/main/reports/STROBE-checklist.md">Open checklist</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="data-sources">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Data sources</p>
+            <h2>Privacy-preserving public data layer</h2>
+          </div>
+          <p>The public repository contains synthetic, non-identifiable records and documentation. Original identifiable records are excluded from public distribution.</p>
+        </div>
+        <div class="grid three">
+          <article class="surface accent"><h3>Household survey microdata</h3><p>Represented publicly through synthetic household and member files generated for reproducibility and privacy.</p></article>
+          <article class="surface teal"><h3>Public products</h3><p>Figures, HTML report, CSV model results, source code, tests and metadata are published for review.</p></article>
+          <article class="surface blue"><h3>Restricted material</h3><p>Original identifiable microdata are not distributed, and public outputs must not be used as population estimates.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="container narrow">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Analytical workflow</p>
+            <h2>From private records to public outputs</h2>
+          </div>
+        </div>
+        <div class="timeline" aria-label="Workflow steps">
+          <article><h3>Household survey microdata</h3><p>Private source records are kept outside the public publication layer.</p></article>
+          <article><h3>Privacy and validation checks</h3><p>Data contracts reject direct identifiers and invalid ranges before analysis.</p></article>
+          <article><h3>Household and housing-variable harmonization</h3><p>Household and member units are documented separately to protect denominators.</p></article>
+          <article><h3>Rural housing indicators</h3><p>Service access, quality materials and severe crowding feed the housing score.</p></article>
+          <article><h3>Territorial comparisons</h3><p>Zone comparisons include uncertainty to prevent unstable rankings.</p></article>
+          <article><h3>Figures, tables, reports and dashboard</h3><p>Outputs are communicated through GitHub Pages, the HTML paper, figures and reproducible assets.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="methodology">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Methodology</p>
+            <h2>Existing analytical design</h2>
+          </div>
+          <p>The methods below summarize the repository's existing documentation and report outputs. Nothing was recalculated for this web update.</p>
+        </div>
+        <div class="grid three">
+          <article class="surface accent"><h3>Variable construction</h3><p>Housing score combines electricity, improved water, improved sanitation, quality walls, quality floor and no severe crowding.</p></article>
+          <article class="surface blue"><h3>Weights and uncertainty</h3><p>Weighted descriptive estimates and 2,000-resample bootstrap intervals are documented in the technical report.</p></article>
+          <article class="surface teal"><h3>Missing values</h3><p>Missingness is audited before modelling, with income missingness reported in the public metrics.</p></article>
+          <article class="surface green"><h3>Territorial analysis</h3><p>Zone-level comparisons are used for communication, with wide intervals treated as a substantive warning.</p></article>
+          <article class="surface orange"><h3>Exploratory model</h3><p>A logistic model relates adequate housing to education, log income, household size and woman-headed household.</p></article>
+          <article class="surface accent"><h3>Limits</h3><p>Synthetic records, small sample size and cross-sectional associations restrict substantive and causal interpretation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="privacy">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Privacy</p>
+            <h2>Responsible public release</h2>
+          </div>
+          <p>The repository is designed to demonstrate analytical skill while avoiding disclosure of real respondents.</p>
+        </div>
+        <div class="grid three">
+          <article class="surface accent"><h3>No public microdata disclosure</h3><p>The original identifiable household records are not distributed publicly.</p></article>
+          <article class="surface blue"><h3>Public products are safe</h3><p>Published files are synthetic, aggregate, methodological or code assets.</p></article>
+          <article class="surface teal"><h3>No identifiers</h3><p>The test suite checks that public generated columns avoid forbidden direct identifiers.</p></article>
+          <article class="surface green"><h3>Use restrictions documented</h3><p>Public outputs are not valid estimates for Coroico, Bolivia or any real population.</p></article>
+          <article class="surface orange"><h3>Privacy controls visible</h3><p>Validation, fixed-seed generation and responsible-use documentation are part of the repository.</p></article>
+          <article class="surface accent"><h3>Manual review still matters</h3><p>A real survey release would require sampling design, field documentation and authorization before substantive publication.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="reports">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Reports</p>
+            <h2>Existing research communication products</h2>
+          </div>
+        </div>
+        <div class="publication-list">
+          <article class="publication"><h3>STROBE-aligned research paper</h3><p>HTML paper with abstract, methods, results, figures, two embedded tables, limitations and declarations.</p><a class="button small secondary" href="research-paper.html">Open paper</a></article>
+          <article class="publication"><h3>Executive summary</h3><p>Short decision-oriented summary of the synthetic workflow, headline metrics and limitations.</p><a class="button small secondary" href="https://github.com/MonicaCT/rural-bolivia-housing-analytics/blob/main/reports/executive-summary.md">Open summary</a></article>
+          <article class="publication"><h3>Technical report source</h3><p>Quarto source documenting the research design, estimands, measurement, missingness, descriptive outputs and model specification.</p><a class="button small secondary" href="https://github.com/MonicaCT/rural-bolivia-housing-analytics/blob/main/reports/technical-report.qmd">Open source</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reproducibility">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Reproducibility</p>
+            <h2>Code, tests and analytical assets</h2>
+          </div>
+          <p>The repository documents commands and contains Python source, tests, SQL and outputs. This web update did not run pipelines or regenerate results.</p>
+        </div>
+        <div class="grid three">
+          <article class="surface blue"><h3>Python workflow</h3><p>Source files generate synthetic records, validate data contracts, produce metrics, fit the exploratory model and publish outputs.</p></article>
+          <article class="surface teal"><h3>SQL analytical model</h3><p>The SQL file builds a portable household-member analytical view with quality flags and synthetic-approved data only.</p><a class="button small secondary" href="https://github.com/MonicaCT/rural-bolivia-housing-analytics/blob/main/sql/analytical_model.sql">Open SQL</a></article>
+          <article class="surface green"><h3>Automated tests</h3><p>The test suite checks reproducible generation, public-data contracts and finite model outputs.</p><a class="button small secondary" href="https://github.com/MonicaCT/rural-bolivia-housing-analytics/blob/main/tests/test_pipeline.py">Open tests</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="limitations">
+      <div class="container narrow">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Limitations</p>
+            <h2>Interpretation boundaries</h2>
+          </div>
+        </div>
+        <ul class="list-clean">
+          <li>Public records are synthetic and cannot estimate conditions in Coroico or Bolivia.</li>
+          <li>Sixty households are insufficient for complex machine learning or strong subgroup claims.</li>
+          <li>Synthetic weights and analytically defined indices are not substitutes for a documented sampling design.</li>
+          <li>Cross-sectional associations cannot identify causal effects.</li>
+          <li>Multiple imputation and survey-design variance require authorized source data and design variables.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="citation">
+      <div class="container">
+        <div class="grid two">
+          <article class="surface accent">
+            <p class="eyebrow">Citation</p>
+            <h2>Citation metadata</h2>
+            <p>Citation metadata are available in the repository's CITATION.cff file. The citation warning states that synthetic results should not be cited as empirical evidence.</p>
+            <a class="button small secondary" href="https://github.com/MonicaCT/rural-bolivia-housing-analytics/blob/main/CITATION.cff">Open CITATION.cff</a>
+          </article>
+          <article class="surface blue">
+            <p class="eyebrow">Author and navigation</p>
+            <h2>Monica Cueto Tapia</h2>
+            <p>Development data analyst portfolio spanning poverty, housing, credit risk, financial development, economic complexity and structural vulnerability.</p>
+            <div class="card-actions"><a class="button small primary" href="https://github.com/MonicaCT">GitHub profile</a><a class="button small secondary" href="https://monicact.github.io/">Back to Portfolio</a><a class="button small tertiary" href="https://github.com/MonicaCT/rural-bolivia-housing-analytics">Repository</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <span>Rural Bolivia Housing Analytics - privacy-first synthetic public workflow.</span>
+      <a href="https://github.com/MonicaCT/rural-bolivia-housing-analytics">View repository</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

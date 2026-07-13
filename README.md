@@ -14,12 +14,13 @@ Privacy-first, reproducible household-survey analytics using fully synthetic pub
 </p>
 
 <p align="center">
-  <a href="https://monicact.github.io/rural-bolivia-housing-analytics/"><img alt="Live report" src="https://img.shields.io/badge/Live%20Report-open-002147?style=for-the-badge"></a>
-  <a href="https://monicact.github.io/rural-bolivia-housing-analytics/research-paper.html"><img alt="Research paper" src="https://img.shields.io/badge/Paper-read-2F6B9A?style=for-the-badge"></a>
-  <a href="PRIVACY.md"><img alt="Privacy" src="https://img.shields.io/badge/Privacy-review-1D2733?style=for-the-badge"></a>
-  <a href="data/README.md"><img alt="Data" src="https://img.shields.io/badge/Data-dictionary-C9A227?style=for-the-badge"></a>
-  <a href="#reproducibility"><img alt="Reproduce" src="https://img.shields.io/badge/Reproduce-commands-111827?style=for-the-badge"></a>
+  <a href="https://monicact.github.io/rural-bolivia-housing-analytics/"><img alt="Website" src="https://img.shields.io/badge/Website-open-002147?style=for-the-badge"></a>
+  <a href="https://monicact.github.io/rural-bolivia-housing-analytics/research-paper.html"><img alt="Analytical report" src="https://img.shields.io/badge/Report-read-2F6B9A?style=for-the-badge"></a>
+  <a href="https://monicact.github.io/rural-bolivia-housing-analytics/#figures"><img alt="Main figures" src="https://img.shields.io/badge/Main%20Figures-view-C9A227?style=for-the-badge"></a>
+  <a href="https://monicact.github.io/rural-bolivia-housing-analytics/#tables"><img alt="Executive tables" src="https://img.shields.io/badge/Executive%20Tables-open-1F7A8C?style=for-the-badge"></a>
+  <a href="https://monicact.github.io/rural-bolivia-housing-analytics/#methodology"><img alt="Methodology" src="https://img.shields.io/badge/Methodology-review-1D2733?style=for-the-badge"></a>
   <a href="https://github.com/MonicaCT/rural-bolivia-housing-analytics"><img alt="Repository" src="https://img.shields.io/badge/Repository-GitHub-4B5563?style=for-the-badge"></a>
+  <a href="https://monicact.github.io/"><img alt="Back to Portfolio" src="https://img.shields.io/badge/Back%20to%20Portfolio-return-B23A48?style=for-the-badge"></a>
 </p>
 
 ## Research Position
