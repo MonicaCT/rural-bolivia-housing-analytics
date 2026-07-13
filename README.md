@@ -20,7 +20,7 @@ Privacy-first, reproducible household-survey analytics using fully synthetic pub
   <a href="https://monicact.github.io/rural-bolivia-housing-analytics/#tables"><img alt="Executive tables" src="https://img.shields.io/badge/Executive%20Tables-open-1F7A8C?style=for-the-badge"></a>
   <a href="https://monicact.github.io/rural-bolivia-housing-analytics/#methodology"><img alt="Methodology" src="https://img.shields.io/badge/Methodology-review-1D2733?style=for-the-badge"></a>
   <a href="https://github.com/MonicaCT/rural-bolivia-housing-analytics"><img alt="Repository" src="https://img.shields.io/badge/Repository-GitHub-4B5563?style=for-the-badge"></a>
-  <a href="https://monicact.github.io/"><img alt="Back to Portfolio" src="https://img.shields.io/badge/Back%20to%20Portfolio-return-B23A48?style=for-the-badge"></a>
+  <a href="https://monicact.github.io/MonicaCT/"><img alt="Back to Portfolio" src="https://img.shields.io/badge/Back%20to%20Portfolio-return-B23A48?style=for-the-badge"></a>
 </p>
 
 ## Research Position
